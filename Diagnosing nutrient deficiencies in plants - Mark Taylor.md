@@ -1,7 +1,8 @@
 ##Diagnosing nutrient deficiencies in plants
 
-**by Mark Taylor
-edited by Kevron Rees**
+**by Mark Taylor**
+
+**edited by Kevron Rees**
 
 I will start with saying that a truly balanced fertilization program will save you a lot of grief. Healthy plants resist disease just like we do. I imagine you have seen a person that is not well, and every so often you might hear the expression, “your looking pale”. That is what a deficient plant shows, a change of color. A healthy plant is lush green with leaves and branches reaching upward and outward. In general the bottom of your plants will show the first sign of real problems. 
 

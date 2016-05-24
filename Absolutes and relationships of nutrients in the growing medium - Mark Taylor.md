@@ -1,8 +1,9 @@
 
 #Absolutes and relationships of nutrients in the growing medium
 
-**by Mark Taylor
-edited by Kevron Rees**
+**by Mark Taylor**
+
+**edited by Kevron Rees**
 
 In the growing medium, be it natural soil, a custom mix, or just water, the PH of that medium is critical.  Too high or too low will affect all nutrients in that the nutrients can become insoluble or can be easily leached away and therefore completely unavailable to the plant. The best range in the PH scale for typical crops in your garden is between 5.5 and 6.5. If you are seeing quickly developing deficiencies in the early stages of your plants growth and you know you are feeding them a balanced diet, check the PH of your medium and correct it. There are inexpensive PH kits available and plenty of information on how to correct this problem.
 
