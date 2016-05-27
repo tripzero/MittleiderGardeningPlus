@@ -15,10 +15,6 @@ class Colors:
 
 class Color:
 	
-	color = ""
-	color_attribute = None
-
-
 	def __init__(self, color, attribute = None):
 		self.color = color
 		self.color_attribute = attribute
@@ -29,8 +25,6 @@ class ColorAttributes:
 	streaks = "streaks"
 
 class ColorAttribute:
-	location = []
-
 	def __init__(self, attribute, location = []):
 		self.attribute = attribute
 		self.location = location
@@ -174,7 +168,7 @@ class Iron(Nutrient):
 		leaves = Location(Location.new_leaves, [], [Color(Colors.yellow, ColorAttribute(ColorAttributes.blotches, [Location.between_leaf_veins])),
 			                                        Color(Colors.dark_green, ColorAttribute(ColorAttributes.general, [Location.leaf_veins]))])
 
-		old_leaves = Location(Location.old_leaves, [Structural.leaf_drop], [Color(Colors.yellow)])
+		old_leaves = Location(Location.old_leaves, [Structural.leaf_drop], [Color(Colors.yellow, ColorAttribute(ColorAttributes.general))])
 
 		flowers = Location(Location.flower, [Flowering.flower_drop])
 
@@ -324,7 +318,8 @@ def input_secondary_location(nutrients):
 	for n in nutrients:
 		for l in n.location:
 			for c in l.color:
-				locations.extend(c.attribute.location)
+				if c.color_attribute:
+					locations.extend(c.color_attribute.location)
 
 	locations = np.unique(locations)
 	sec_loc = print_menu(locations, "Select secondary location of symptom")
@@ -334,8 +329,10 @@ def input_secondary_location(nutrients):
 	for n in nutrients:
 		for l in n.location:
 			for c in l.color:
-				if c.color_attribute and c.color_attribute.location == sec_loc:
-					filtered_nutrients.append(n)
+				if c.color_attribute:
+					for al in c.color_attribute.location:
+						if al == sec_loc:
+							filtered_nutrients.append(n)
 
 	return np.unique(filtered_nutrients)
 
