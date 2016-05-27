@@ -194,10 +194,15 @@ class Sulfer(Nutrient):
 
 		self.location.extend([leaves, terminal_buds, old_leaves])
 
-class Manganese(Iron, Sulfer):
+class Manganese(Nutrient):
 	def __init__(self):
-		Iron.__init__(self)
-		Sulfer.__init__(self)
+		Nutrient.__init__(self)
+		
+		iron = Iron()
+		sulfer = Sulfer()
+
+		self.location.extend(iron.location)
+		self.location.extend(sulfer.location)
 
 class Copper(Nutrient):
 	def __init__(self):
