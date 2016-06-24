@@ -3,7 +3,7 @@
 import collections
 import numpy as np
 
-class Colors:
+class Colors(object):
 	yellow = "yellow"
 	red = "red"
 	purple = "purple"
@@ -13,36 +13,36 @@ class Colors:
 	orange = "orange"
 	creamy_white = "creamy white"
 
-class Color:
+class Color(object):
 	
 	def __init__(self, color, attribute = None):
 		self.color = color
 		self.color_attribute = attribute
 
-class ColorAttributes:
+class ColorAttributes(object):
 	general = "general"
 	blotches = "blotches"
 	streaks = "streaks"
 
-class ColorAttribute:
+class ColorAttribute(object):
 	def __init__(self, attribute, location = []):
 		self.attribute = attribute
 		self.location = location
 
-class Fruit:
+class Fruit(object):
 	poor_fruit_quality = "poor fruit quality"
 	misshapen = "misshapen"
 	failure = "failure to fruit"
 	poor_fruit_set = "poor fruit set"
 
-class Flowering:
+class Flowering(object):
 	poor_fruit_set = "poor fruit set"
 	poor_flower_set = "poor flower set"
 	flower_drop = "flower drop"
 	failure = "failure to flower"
 
 
-class Structural:
+class Structural(object):
 	scorching = "scorching"
 	death = "death"
 	wilting = "wilting"
@@ -60,7 +60,7 @@ class Structural:
 	undersized = "undersized"
 
 
-class Location:
+class Location(object):
 	new_leaves = "new leaves"
 	old_leaves = "old leaves"
 	roots = "roots"
