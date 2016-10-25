@@ -307,7 +307,6 @@ function get_primary_locations(nutrients) {
 		var n = nutrients[n_]
 		for (var l_ = 0; l_<n.location.length; l_++) {
 			var l = n.location[l_]
-			console.log("adding location: "+ l.location)
 			locations.push(l.location)
 		}
 	}
@@ -441,7 +440,7 @@ function get_nutrients_for_secondary_location(sec_loc) {
 			for (var c=0; c<location.color.length; c++) {
 				color = location.color[c]
 				if (color.color_attribute) {
-					for (var al=0; al<color.color_attribute.location.length) {
+					for (var al=0; al<color.color_attribute.location.length; al++) {
 						loc = color.color_attribute.location[al]
 						if (al === sec_loc) {
 							filtered_nutrients.push(nutrient)
@@ -489,4 +488,24 @@ function get_nutrients_for_color_attribute(col_att) {
 	}
 
 	return unique(filtered_nutrients)
+}
+
+String.prototype.replaceAll = function(find, replace) {
+	var target = this
+	var str = target.replace(find, replace)
+
+	while (str.indexOf(find) != -1) {
+		str = str.replace(find, replace)
+	}
+
+	return str;
+}
+
+function populate_html(element_str, list) {
+	var elements = []
+	for (var l=0; l<list.length; l++)	{
+		elements.push(element_str.replaceAll("{}", list[l]))
+	}
+
+	return elements
 }

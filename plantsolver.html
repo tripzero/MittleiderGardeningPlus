@@ -3,10 +3,32 @@
 	<title>Plant Nutrition Solver</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
-	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="plantsolver.js"></script>
+	<script type="text/javascript">
+		$(document).bind("pageinit", function() {
+
+			var nutrients_list = Nutrient.nutrients();
+			var primary_locations = get_primary_locations(nutrients_list);
+
+			var option_element = "<option value=\"{}\">{}</option>";
+
+
+			var location_primary_select = $("location_primary_select");
+			var list = populate_html(option_element, primary_locations);
+			$.each(list, function(index, element) {
+				location_primary_select.append(element);
+			});
+			location_primary_select.selectmenu();
+			location_primary_select.trigger("change");
+			location_primary_select.selectmenu("refresh", true);
+
+		});
+
+	</script>
+
 </head>
 <body>
 <div id="deficiency_list"></div>
@@ -14,8 +36,7 @@
 <form>
 	<div class="ui-field-contain">
 		<label for="select-native-1">Location (Primary)</label>
-		<select name="select-native-1" id="location_primary_select">
-			<option value="1">The 1st Option</option>
+		<select name="select-native-1" name="location_primary_select">
 		</select>
 	</div>
 
