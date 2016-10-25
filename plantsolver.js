@@ -488,6 +488,5 @@ function get_nutrients_for_color_attribute(col_att) {
 		}
 	}
 
-
 	return unique(filtered_nutrients)
 }
